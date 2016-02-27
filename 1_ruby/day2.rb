@@ -53,7 +53,7 @@ lineNumber = 1
 
 IO.readlines(File.open("day2text.txt", "r")).each {
   |line|
-  if (/fr/ =~ line)
+  if (/second/ =~ line)
     p lineNumber.to_s + ' ' + line
   end
   lineNumber = lineNumber + 1
