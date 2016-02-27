@@ -1,3 +1,5 @@
+# Day 2 : Floating down from the sky
+
 p '- 1 - Print an array of 16 numbers, 4 numbers at a time -'
 
 array = Array.new(17) {|i| 10 + i}
@@ -49,14 +51,14 @@ tree.visit_all {|h| p h.node_name}
 
 p '- 3 - Write a grep function -'
 
-lineNumber = 1
+linenumber = 1
 
-IO.readlines(File.open("day2text.txt", "r")).each {
+IO.readlines(File.open('day2text.txt', 'r')).each {
   |line|
-  if (/second/ =~ line)
-    p lineNumber.to_s + ' ' + line
+  if /second/ =~ line
+    p linenumber.to_s + ' ' + line
   end
-  lineNumber = lineNumber + 1
+  linenumber = linenumber + 1
 }
 
 

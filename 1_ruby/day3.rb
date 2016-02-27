@@ -1,3 +1,5 @@
+# Day 3 : Serious Change
+
 module ActsAsCsv
   class CsvRow
     def initialize(csv, content)
@@ -6,12 +8,12 @@ module ActsAsCsv
     end
 
     #catch missing method and access array of content in proper position
-    def method_missing(name, *args)
+    def method_missing(name)
       index = @csv.headers.index(name.to_s)
       if index
         @contents[index]
       else
-        "!!incorrect accessor!!"
+        '!!incorrect accessor!!'
       end
     end
   end

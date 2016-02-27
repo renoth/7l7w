@@ -11,7 +11,7 @@ puts index
 i = 0
 while (i < 10)
   i = i + 1
-  puts "This is sentence number %d" % i
+  puts 'This is sentence number %d' % i
 end
 
 # run this file by calling 'ruby day1.rb'
