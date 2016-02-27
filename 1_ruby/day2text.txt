@@ -1,9 +1,4 @@
-HAHA
-HAHA
-HAHA
-HAHA
-HOHO
-dies ist eine
-angabe des textes
-wem es nicht passt
-der soll die fraesse halten
+first line
+second line
+third line
+fourth line
