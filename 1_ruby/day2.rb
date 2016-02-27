@@ -1,6 +1,4 @@
-
-
-p '---------- 1 ---------'
+p '- 1 - Print an array of 16 numbers, 4 numbers at a time -'
 
 array = Array.new(17) {|i| 10 + i}
 
@@ -14,7 +12,7 @@ array.each_slice(4) {
   |a| p a
 }
 
-p '---------- 2 ---------'
+p '-2 - Build a Tree class that accepts nested Trees in its constructor -'
 
 class Tree
   attr_accessor :children, :node_name
@@ -49,7 +47,7 @@ tree = Tree.new('root', hash.fetch(hash.keys[0]))
 
 tree.visit_all {|h| p h.node_name}
 
-p '---------- 3 ---------'
+p '- 3 - Write a grep function -'
 
 lineNumber = 1
 
