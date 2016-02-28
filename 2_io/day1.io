@@ -1,6 +1,6 @@
 # Execute code from a slot
 
-"IO day 1" println
+"Day 1 - Skipping School, Hanging Out\n" println
 
 # Create a new prototype
 DayOne := Object clone
