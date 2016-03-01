@@ -28,6 +28,7 @@ Number / = method(divisor, if(divisor == 0, 0, standardDivision(divisor)))
 
 (66 / 0) println
 (66 / 11) println
+
 "\n3. Sum of all Numbers in a 2-dimensional Array" println
 
 # create a matrix
@@ -39,4 +40,31 @@ List add2 := method(
 )
 
 matrix add2 println
+
+"\n4. create own average method on List" println
+
+
+List myAverage := method(if(size < 1,0, sum / size))
+list(1,2,5) myAverage println
+
+"\n5. Write a prototype for a 2-dimensional List" println
+
+Matrix := List clone
+Matrix dim := method(x,y, Matrix clone setSize(y) map(col, List clone setSize(x)))
+Matrix clone dim(3,4) println
+
+# Also return call target for chaining:
+Matrix set := method(x,y,val, at(y) atPut(x, val); call target)
+Matrix clone dim(3,4) set(0,0,0) set(1,0,8) set(0,1,99) println
+
+Matrix get := method(x,y, at(y) at(x))
+Matrix clone dim(3,4) set(0,0,0) set(1,0,8) set(0,1,99) get(1,0) println
+
+"\n6. Write a transpose method for Matrix" println
+
+
+
+
+
+
 
