@@ -62,7 +62,37 @@ Matrix clone dim(3,4) set(0,0,0) set(1,0,8) set(0,1,99) get(1,0) println
 
 "\n6. Write a transpose method for Matrix" println
 
+Matrix transpose := method(
+    # Allocate a new Matrix with transposed dimensions
+    copy := dim(size, at(0) size);
 
+    # Fill the copy with original data via get(columnIndex, rowIndex)
+    copy foreach(i, col, col foreach(j, row, copy set(j, i, get(i,j))));
+
+    # Return copy
+    copy
+);
+
+m := Matrix clone dim(2,3) set(0,0,1) set(0,1,2) set(0,2,3) set(1,0,10) set(1,1,11) set(1,2,12)
+m println
+m transpose println
+
+"\n7. Serialize to File and vice versa" println
+
+Matrix toFile := method(path, File open(path) write(serialized) close)
+m toFile("matrix")
+
+Matrix fromFile := method(path,
+    # Deserialization is just a List of Lists
+    ll := doFile(path);
+
+    matrix := dim(ll at(0) size, ll size);
+    ll foreach(i, col, col foreach(j, row, matrix set(j, i, ll at(i) at(j))));
+    matrix
+)
+
+# Now we can use it as Matrix
+Matrix fromFile("matrix") transpose println
 
 
 
